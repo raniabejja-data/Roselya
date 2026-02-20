@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosélya | Essence Royale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #F9F9F9; color: #333; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #D4AF37; }
+        .gold-bg { background-color: #D4AF37; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 flex justify-between items-center px-6 py-4 bg-white/90 backdrop-blur-md border-b border-[#D4AF37]/20">
+        <div class="text-xl tracking-[0.3em] font-bold gold-text">ROSÉLYA</div>
+        <div class="flex space-x-6 text-[10px] uppercase tracking-widest font-semibold">
+            <a href="#huiles" class="hover:gold-text">Huiles</a>
+            <a href="#packs" class="hover:gold-text">Packs</a>
+            <a href="https://wa.me/212616256878" class="gold-text underline">Commander</a>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute z-0 min-w-full min-h-full object-cover">
+            <source src="Firefly Cinematic close-up of the elegant woman in the photo gently applying a drop of golden perfum.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/20 z-10"></div>
+        <div class="relative z-20 text-center text-white p-4">
+            <h1 class="text-5xl md:text-7xl tracking-[0.3em] font-serif mb-4">ROSÉLYA</h1>
+            <p class="text-sm md:text-lg tracking-[0.5em] uppercase italic">Votre Essence Royale</p>
+            <a href="#huiles" class="inline-block mt-10 px-8 py-3 border border-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition">Découvrir la collection</a>
+        </div>
+    </section>
+
+    <section id="huiles" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="gold-text text-[10px] tracking-[0.5em] uppercase mb-2">Prestige</h2>
+            <p class="text-3xl font-serif italic">Nos Best-Sellers - 120 DH</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="text-center bg-white p-6 shadow-sm border border-gray-50">
+                <img src="IMG_7075.png" alt="Musk Blanc" class="w-full h-64 object-contain mb-4">
+                <h3 class="tracking-widest uppercase text-sm">Musk Blanc</h3>
+                <p class="gold-text font-bold mt-2">120 DH</p>
+            </div>
+            <div class="text-center bg-white p-6 shadow-sm border border-gray-50">
+                <img src="IMG_7076.png" alt="Noix de Coco" class="w-full h-64 object-contain mb-4">
+                <h3 class="tracking-widest uppercase text-sm">Noix de Coco</h3>
+                <p class="gold-text font-bold mt-2">120 DH</p>
+            </div>
+            <div class="text-center bg-white p-6 shadow-sm border border-gray-50">
+                <img src="IMG_7082.png" alt="Fleur" class="w-full h-64 object-contain mb-4">
+                <h3 class="tracking-widest uppercase text-sm">Fleur</h3>
+                <p class="gold-text font-bold mt-2">120 DH</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packs" class="py-20 px-6 bg-[#FDFBFB]">
+        <div class="text-center mb-16">
+            <h2 class="gold-text text-[10px] tracking-[0.5em] uppercase mb-2">Exclusivité</h2>
+            <p class="text-3xl font-serif italic">Coffrets Royaux - 320 DH</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white border border-[#D4AF37]/20 p-8 flex flex-col items-center">
+                <img src="IMG_7090.png" class="h-48 mb-6">
+                <h3 class="text-lg tracking-[0.2em] uppercase mb-2">Signature Royale</h3>
+                <p class="gold-text font-bold mb-6">320 DH</p>
+                <a href="https://wa.me/212616256878" class="gold-bg text-white px-10 py-3 text-[10px] tracking-widest uppercase hover:bg-black transition">Commander ce pack</a>
+            </div>
+            <div class="bg-white border border-[#D4AF37]/20 p-8 flex flex-col items-center">
+                <img src="IMG_7091.png" class="h-48 mb-6">
+                <h3 class="text-lg tracking-[0.2em] uppercase mb-2">Douceur Gourmande</h3>
+                <p class="gold-text font-bold mb-6">320 DH</p>
+                <a href="https://wa.me/212616256878" class="gold-bg text-white px-10 py-3 text-[10px] tracking-widest uppercase hover:bg-black transition">Commander ce pack</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-gray-100 text-center">
+        <h3 class="gold-text font-serif text-2xl mb-4 italic">Rosélya</h3>
+        <p class="text-xs text-gray-500 tracking-[0.2em] uppercase mb-2">Livraison Partout au Maroc (20 DH)</p>
+        <p class="text-xs text-gray-400 mb-6">100% Sans Alcool • Pur Luxe</p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://wa.me/212616256878" class="text-gray-600 hover:gold-text uppercase text-[10px] tracking-widest">WhatsApp</a>
+            <a href="#" class="text-gray-600 hover:gold-text uppercase text-[10px] tracking-widest">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
