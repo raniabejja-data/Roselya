@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosélya | Votre Essence Royale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #D4AF37; }
+        .gold-bg { background-color: #D4AF37; }
+        .fade-in { animation: fadeIn 2s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-[#FDFBFB]">
+
+    <nav class="fixed w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 bg-white/90 backdrop-blur-sm border-b border-[#D4AF37]/10">
+        <div class="text-2xl tracking-[0.3em] font-bold gold-text">ROSÉLYA</div>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-semibold">
+            <a href="#collection" class="hover:text-[#D4AF37] transition">Collection</a>
+            <a href="#packs" class="hover:text-[#D4AF37] transition">Packs Royaux</a>
+            <a href="#quiz" class="hover:text-[#D4AF37] transition">Mon Essence</a>
+        </div>
+        <a href="https://wa.me/212616256878" class="gold-bg text-white px-5 py-2 text-[10px] tracking-widest uppercase rounded-sm">Commander</a>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute z-0 min-w-full min-h-full object-cover">
+            <source src="Firefly Cinematic close-up of the elegant woman in the photo gently applying a drop of golden perfum.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="relative z-20 text-center text-white fade-in">
+            <h1 class="text-6xl md:text-8xl tracking-[0.3em] font-serif mb-4">ROSÉLYA</h1>
+            <p class="text-sm md:text-lg tracking-[0.6em] uppercase italic">Votre Essence Royale</p>
+        </div>
+    </section>
+
+    <section id="collection" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="gold-text text-xs tracking-[0.5em] uppercase mb-2">Les Incontournables</h2>
+            <p class="text-4xl font-serif italic text-gray-800">L'Excellence à 120 DH</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group text-center">
+                <div class="bg-white p-10 mb-6 shadow-sm group-hover:shadow-md transition">
+                    <img src="IMG_7075.png" alt="Musk Blanc" class="h-72 mx-auto object-contain transition duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="tracking-widest uppercase text-sm font-semibold">Musk Blanc</h3>
+                <p class="text-gray-400 text-xs mt-1 italic">Note : Poudrée & Propre</p>
+                <p class="gold-text font-bold mt-3 text-lg">120 DH</p>
+            </div>
+            <div class="group text-center">
+                <div class="bg-white p-10 mb-6 shadow-sm group-hover:shadow-md transition">
+                    <img src="IMG_7074.png" alt="Ambre Gold" class="h-72 mx-auto object-contain transition duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="tracking-widest uppercase text-sm font-semibold">Ambre Gold</h3>
+                <p class="text-gray-400 text-xs mt-1 italic">Note : Orientale & Intense</p>
+                <p class="gold-text font-bold mt-3 text-lg">120 DH</p>
+            </div>
+            <div class="group text-center">
+                <div class="bg-white p-10 mb-6 shadow-sm group-hover:shadow-md transition">
+                    <img src="IMG_7082.png" alt="Fleur" class="h-72 mx-auto object-contain transition duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="tracking-widest uppercase text-sm font-semibold">Fleur</h3>
+                <p class="text-gray-400 text-xs mt-1 italic">Note : Bouquet Impérial</p>
+                <p class="gold-text font-bold mt-3 text-lg">120 DH</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packs" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto border-t border-b border-[#D4AF37]/20 py-16">
+            <div class="text-center mb-16">
+                <h2 class="gold-text text-xs tracking-[0.5em] uppercase mb-2">Offre Exclusive</h2>
+                <p class="text-4xl font-serif italic">Les Packs Royaux - 320 DH</p>
+                <p class="text-gray-400 text-xs mt-4">3 Essences au choix pour un rituel complet</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+                <div class="text-center">
+                    <img src="IMG_7090.png" class="h-64 mx-auto mb-6">
+                    <h3 class="text-xl tracking-widest font-serif">SIGNATURE ROYALE</h3>
+                    <p class="text-sm text-gray-500 my-4 font-light">Le coffret culte : Ambre, Musk et Fleur.</p>
+                    <p class="gold-text font-bold text-xl mb-6">320 DH</p>
+                    <a href="https://wa.me/212616256878" class="gold-bg text-white px-12 py-4 text-[10px] tracking-[0.3em] uppercase">Commander via WhatsApp</a>
+                </div>
+                <div class="text-center">
+                    <img src="IMG_7091.png" class="h-64 mx-auto mb-6">
+                    <h3 class="text-xl tracking-widest font-serif">DOUCEUR GOURMANDE</h3>
+                    <p class="text-sm text-gray-500 my-4 font-light">Vanille, Caramel et Chocolat.</p>
+                    <p class="gold-text font-bold text-xl mb-6">320 DH</p>
+                    <a href="https://wa.me/212616256878" class="gold-bg text-white px-12 py-4 text-[10px] tracking-[0.3em] uppercase">Commander via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 bg-[#F9F9F9] text-center border-t border-gray-100">
+        <div class="mb-12">
+            <h3 class="text-2xl font-serif gold-text mb-6 tracking-widest">ROSÉLYA</h3>
+            <div class="flex justify-center space-x-8 text-[10px] tracking-[0.3em] uppercase text-gray-400">
+                <span>100% Sans Alcool</span>
+                <span>Fait au Maroc</span>
+                <span>Livraison 20 DH</span>
+            </div>
+        </div>
+        <div class="text-sm text-gray-500 mb-8 font-light leading-relaxed">
+            Besoin d'un conseil ? Contactez votre concierge au<br/>
+            <span class="font-bold text-gray-800">+212 616 25 68 78</span>
+        </div>
+        <p class="text-[9px] text-gray-300 uppercase tracking-widest">© 2024 Rosélya. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
