@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosélya | Votre Essence Royale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #F9F9F9; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #D4AF37; }
+        .gold-bg { background-color: #D4AF37; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { motion, AnimatePresence } = window.Motion;
+
+        const App = () => {
+            const [isCartOpen, setIsCartOpen] = useState(false);
+            const [quizStep, setQuizStep] = useState(0);
+            const [quizResult, setQuizResult] = useState(null);
+
+            return (
+                <div className="relative">
+                    {/* 1. NAVBAR (Composant Navbar) */}
+                    <nav className="fixed w-full z-50 flex justify-between items-center px-6 md:px-10 py-6 bg-white/80 backdrop-blur-md border-b border-[#D4AF37]/20">
+                        <div className="text-2xl tracking-[0.2em] font-bold gold-text">ROSÉLYA</div>
+                        <div className="hidden md:flex space-x-10 text-[10px] uppercase tracking-widest font-semibold">
+                            <a href="#huiles" className="hover:gold-text transition">Huiles</a>
+                            <a href="#packs" className="hover:gold-text transition">Packs Royaux</a>
+                            <button onClick={() => setQuizStep(0)} className="gold-text border-b border-[#D4AF37]">Créez votre essence</button>
+                        </div>
+                        <button onClick={() => setIsCartOpen(true)} className="relative gold-text">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" strokeWidth="1.5"/></svg>
+                        </button>
+                    </nav>
+
+                    {/* 2. HERO (Composant Hero) */}
+                    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+                        <video autoPlay loop muted playsInline className="absolute z-0 min-w-full min-h-full object-cover">
+                            <source src="Firefly Cinematic close-up of the elegant woman in the photo gently applying a drop of golden perfum.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-black/30 z-10"></div>
+                        <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:1.5}} className="relative z-20 text-center text-white">
+                            <h1 className="text-6xl md:text-8xl tracking-[0.2em] font-serif mb-4">ROSÉLYA</h1>
+                            <p className="text-lg tracking-[0.5em] uppercase italic">Votre Essence Royale</p>
+                        </motion.div>
+                    </section>
+
+                    {/* 3. BEST SELLERS (Composant BestSellers - 120 DH) */}
+                    <section id="huiles" className="py-24 px-6 max-w-7xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="gold-text text-xs tracking-[0.5em] uppercase mb-2">Sélection de Prestige</h2>
+                            <p className="text-4xl font-serif italic">Les Huiles - 120 DH</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            {[
+                                {name: 'Musk Blanc', img: 'IMG_7075.png'},
+                                {name: 'Noix de Coco', img: 'IMG_7076.png'},
+                                {name: 'Fleur', img: 'IMG_7082.png'}
+                            ].map((prod, i) => (
+                                <motion.div key={i} whileInView={{opacity:1, y:0}} initial={{opacity:0, y:30}} viewport={{once:true}} className="text-center group cursor-pointer">
+                                    <div className="bg-white p-8 mb-6 overflow-hidden">
+                                        <img src={prod.img} className="w-full h-72 object-contain group-hover:scale-105 transition duration-700" />
+                                    </div>
+                                    <h3 className="tracking-widest uppercase text-sm">{prod.name}</h3>
+                                    <p className="gold-text font-semibold mt-2">120 DH</p>
+                                    <button className="mt-4 text-[10px] uppercase border-b border-gray-200 pb-1 hover:border-[#D4AF37]">Ajouter au Panier</button>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 4. PACKS (Composant ProductPacks - 320 DH) */}
+                    <section id="packs" className="py-24 px-6 bg-white">
+                        <div className="text-center mb-16">
+                            <h2 className="gold-text text-xs tracking-[0.5em] uppercase mb-2">Coffrets Cadeaux</h2>
+                            <p className="text-4xl font-serif italic">Les Packs Royaux - 320 DH</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                            <div className="border border-gray-100 p-10 text-center hover:shadow-xl transition">
+                                <img src="IMG_7090.png" className="h-64 mx-auto mb-6" />
+                                <h3 className="text-xl tracking-widest mb-2">SIGNATURE ROYALE</h3>
+                                <p className="gold-text font-bold mb-6">320 DH</p>
+                                <button className="gold-bg text-white w-full py-4 text-[10px] tracking-widest uppercase">Commander via WhatsApp</button>
+                            </div>
+                            <div className="border border-gray-100 p-10 text-center hover:shadow-xl transition">
+                                <img src="IMG_7091.png" className="h-64 mx-auto mb-6" />
+                                <h3 className="text-xl tracking-widest mb-2">DOUCEUR GOURMANDE</h3>
+                                <p className="gold-text font-bold mb-6">320 DH</p>
+                                <button className="gold-bg text-white w-full py-4 text-[10px] tracking-widest uppercase">Commander via WhatsApp</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 5. QUIZ (Composant EssenceWizard) */}
+                    <section className="py-24 px-6 bg-[#FDFBFB]">
+                        <div className="max-w-2xl mx-auto border border-[#D4AF37]/30 p-12 bg-white text-center">
+                            <h2 className="gold-text text-xs tracking-[0.5em] uppercase mb-4">Diagnostic Olfactif</h2>
+                            {quizStep === 0 ? (
+                                <div>
+                                    <p className="mb-8 italic">Quelle est votre humeur aujourd'hui ?</p>
+                                    <div className="grid gap-4">
+                                        <button onClick={() => {setQuizResult('Musk Blanc'); setQuizStep(1)}} className="py-3 border border-gray-100 hover:border-[#D4AF37] uppercase text-[10px] tracking-widest">Douce & Pure</button>
+                                        <button onClick={() => {setQuizResult('Ambre Gold'); setQuizStep(1)}} className="py-3 border border-gray-100 hover:border-[#D4AF37] uppercase text-[10px] tracking-widest">Royale & Intense</button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <motion.div initial={{opacity:0}} animate={{opacity:1}}>
+                                    <p className="text-xs gold-text mb-2">VOTRE ESSENCE IDÉALE</p>
+                                    <h3 className="text-3xl font-serif mb-6">{quizResult}</h3>
+                                    <button onClick={() => setQuizStep(0)} className="text-[10px] underline uppercase opacity-50">Recommencer</button>
+                                </motion.div>
+                            )}
+                        </div>
+                    </section>
+
+                    {/* 6. FOOTER (Composant Footer) */}
+                    <footer className="py-20 px-6 border-t border-gray-100 text-center">
+                        <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-16">
+                            <div><h4 className="gold-text text-[10px] tracking-widest uppercase mb-4">Pureté</h4><p className="text-sm font-light">100% Sans Alcool</p></div>
+                            <div><h4 className="gold-text text-[10px] tracking-widest uppercase mb-4">Livraison</h4><p className="text-sm font-light">Partout au Maroc (20 DH)</p></div>
+                            <div><h4 className="gold-text text-[10px] tracking-widest uppercase mb-4">Contact</h4><p className="text-sm font-light">+212 616 25 68 78</p></div>
+                        </div>
+                        <p className="text-[10px] tracking-[0.3em] uppercase opacity-30">© 2024 Rosélya. L'Art du Parfum Pur.</p>
+                    </footer>
+
+                    {/* PANIER (Composant CartDrawer) */}
+                    <AnimatePresence>
+                        {isCartOpen && (
+                            <motion.div initial={{x:'100%'}} animate={{x:0}} exit={{x:'100%'}} transition={{type:'spring', damping:25}} className="fixed right-0 top-0 h-full w-full md:w-96 bg-white z-[100] shadow-2xl p-8">
+                                <div className="flex justify-between mb-8">
+                                    <h2 className="gold-text tracking-widest uppercase text-sm">Votre Écrin</h2>
+                                    <button onClick={() => setIsCartOpen(false)}>✕</button>
+                                </div>
+                                <p className="text-center italic text-gray-400 mt-20">Votre panier est vide.</p>
+                                <div className="absolute bottom-10 left-0 w-full px-8">
+                                    <div className="flex justify-between border-t pt-4 mb-6"><p>Total</p><p className="gold-text">0 DH</p></div>
+                                    <button className="w-full gold-bg text-white py-4 uppercase text-[10px] tracking-widest">Finaliser la commande</button>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
